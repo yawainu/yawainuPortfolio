@@ -1,55 +1,92 @@
-<header class="container-fuild">
-  <div class="row">
-    <div class="col-md-12">
-      header
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <h1><a class="navbar-brand" href="#">yawainu</a></h1>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#profile">profile</a></li>
+          <li><a href="#gallery">garelly</a></li>
+          <li><a href="#works">works</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
 </header>
 
 <section class="container-fuild cover">
-  <div class="row">
-    <div class="col-md-12">
-      cover
-    </div>
-  </div>
 </section>
 
-<section class="container profile">
-  <div class="row">
-    <div class="col-md-12">
-      profile
+<section class="main-wrap">
+
+  <hr class="no-border">
+
+  <section id="profile" class="container profile">
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-2">
+        <img src="<%= asset_path "sample_icon.png" %>" class="img-responsive img-circle profile__icon">
+      </div>
+      <div class="col-sm-8">
+        <div class="profile__text">
+          ああああああああああああああああああああああああああああああああ
+          ああああああああああああああああああああああああああああああああ
+          ああああああああああああああああああああああああああああああああ
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <hr class="no-border">
+
+  <section id="gallery" class="container gallery">
+    <div class="row">
+      <% for num in 1..10 do %>
+        <div class="col-xs-6 col-sm-4">
+          <div class="gallery__item">
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <hr class="no-border">
+
+  <section id="works" class="container works">
+    <% for num in 1..10 do %>
+      <div class="row">
+        <div class="col-sm-4 col-md-3 works__date">2015/12/12 ~ 2016/12/12</div>
+        <div class="col-sm-8 col-md-9 works__text">iOS,androidアプリ「柔らかい犬祭り」内キャラクターイラスト</div>
+      </div>
+    <% end %>
+  </section>
+
+  <hr class="no-border">
+
 </section>
 
-<section class="container gallery">
-  <div class="row">
-    <div class="col-md-12">
-      gallery
+<footer>
+  <section id="contact" class="container contact">
+    <div class="row">
+      <%= bootstrap_form_tag do |f| %>
+        <div class="col-md-6">
+          <%= f.text_field :email %>
+          <%= f.text_field :subject %>
+          <%= f.text_area :body %>
+          <%= f.submit '送信', :class=>"btn btn-primary form-submit-btn pull-right" %>
+        </div>
+      <% end %>
     </div>
-  </div>
-</section>
-
-<section class="container work">
-  <div class="row">
-    <div class="col-md-12">
-      work
-    </div>
-  </div>
-</section>
-
-<section class="container-fuild contact">
-  <div class="row">
-    <div class="col-md-12">
-      contact
-    </div>
-  </div>
-</section>
-
-<footer class="container-fuild">
-  <div class="row">
-    <div class="col-md-12">
-      footer
-    </div>
-  </div>
+  </section>
+  <section class="copyright text-center">
+    <small>Copyright (C) 2016 yawainu.com All Rights Reserved.</small>
+  </section>
 </footer>

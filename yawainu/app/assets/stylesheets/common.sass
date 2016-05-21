@@ -1,21 +1,76 @@
+@import 'bourbon'
+
 body
   font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif
+  background-color: #212121
+
+.no-border
+  margin: 0
+  padding-bottom: 80px
+  border: none
 
 header
-  
   background-color: #212121
   color: #eee
 
+  .navbar-inverse
+    background-color: rgba(0,0,0,.7)
+    border: none
+
+  .navbar-header
+    h1
+      margin: 0
+
+.cover
+  background:
+    image: image-url('sample_icon.png')
+    position: center center
+    size: cover
+  &:before
+    content: ""
+    display: block
+    padding-top: 60%
+
+.main-wrap
+  background-color: #fff
+
 .profile
+  &__icon
+    max-width: 80px
+    margin: 0 auto 32px auto
+  &__text
+
 
 .gallery
+  &__item
+    position: relative
+    margin-bottom: 30px
+    width: 100%
+    background:
+      image: image-url('sample_icon.png')
+      position: center center
+      size: cover
 
-.work
+    &:before
+      content: ""
+      display: block
+      padding-top: 75%
+
+
+.works
+  .row
+    margin-bottom: 8px
 
 .contact
-  background-color: #212121
   color: #eee
 
 footer
-  background-color: #212121
   color: #eee
+
+  .contact
+    margin:
+      top: 40px
+      bottom: 40px
+
+  .copyright
+    margin: 16px
