@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'user_sessions/new'
-
-  get 'admin/index'
-
   # resources
+  resources :user_sessions
+
   resources :users do
+    resources :admin
     resources :categories do
       resources :galleries
     end
@@ -19,6 +18,6 @@ Rails.application.routes.draw do
   root 'top#index'
   get  'admin', to: 'admin#index'
 
-  get  'sign_in' => 'user_sessions#new', as: :sign_in
-  get  'sign_out' => 'user_sessions#destroy', as: :sign_out
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
 end

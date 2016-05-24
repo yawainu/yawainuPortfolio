@@ -1,0 +1,32 @@
+<div class="panel panel-default admin-panel">
+  <div class="panel-heading">
+    <h1>ギャラリー</h1>
+  </div>
+  <div class="panel-body">
+    <h2>カテゴリ</h2>
+    <table class="table table-striped">
+      <tr>
+        <th>category</th>
+        <th>entry</th>
+        <th>app</th>
+        <th></th>
+      </tr>
+      <% for num in 1..3 do %>
+        <tr>
+          <td>カテゴリ名</td>
+          <td>5件</td>
+          <td>表示中</td>
+          <td>
+            <a html="#" class="btn btn-success">編集</a>
+            <a html="#" class="btn btn-danger">削除</a>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <hr>
+    <a html="#" class="btn btn-default btn-block">追加</a>
+  </div>
+  <div class="panel-footer">
+    <a href="#" class="btn btn-default" role="button">戻る</a>
+  </div>
+</div>
