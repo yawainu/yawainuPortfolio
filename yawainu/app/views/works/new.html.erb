@@ -1,1 +1,4 @@
-<%= render 'form' %>
+<%= bootstrap_form_for([@user, @user.works.build]) do |f| %>
+  <%= render 'shared/panel_body', f: f, form: 'works/form' %>
+  <%= render 'shared/panel_footer', f: f %>
+<% end %>

@@ -4,7 +4,9 @@ class CreateWorks < ActiveRecord::Migration
       t.date :start_date
       t.date :end_date
       t.text :comment
-      t.boolean :flag
+      t.boolean :flag,    default: false, null: false
+
+      t.references :user, index: true, null: false
 
       t.timestamps null: false
     end

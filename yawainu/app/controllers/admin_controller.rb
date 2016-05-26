@@ -3,6 +3,7 @@ class AdminController < ApplicationController
 
   def index
     @h1_title = '管理ページ'
+    @user = User.find(params[:user_id])
   end
 
   def create

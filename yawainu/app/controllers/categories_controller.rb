@@ -2,6 +2,8 @@ class CategoriesController < ApplicationController
   before_action :require_login
 
   def index
+    @h1_title = 'ギャラリー'
+    @user = User.find(params[:user_id])
   end
 
   def create

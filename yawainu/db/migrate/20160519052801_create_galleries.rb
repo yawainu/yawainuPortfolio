@@ -4,7 +4,9 @@ class CreateGalleries < ActiveRecord::Migration
       t.string :image
       t.string :title
       t.text :comment
-      t.boolean :flag
+      t.boolean :flag,  default: false, null: false
+
+      t.references :category, index: true, null: false
 
       t.timestamps null: false
     end

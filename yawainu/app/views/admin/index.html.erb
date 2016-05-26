@@ -1,5 +1,9 @@
 <div class="panel-body">
-  <h2>ユーザ情報<%= link_to "変更", {:controller => :users, :action => :index}, {:class => "btn btn-success pull-right"} %></h2>
+  <h2>ユーザ情報<%= link_to "変更", edit_user_path(@user), {:class => "btn btn-success pull-right"} %></h2>
+  <h2>表示設定<%= link_to "変更", edit_display_path(@user), {:class => "btn btn-success pull-right"} %></h2>
+
   <hr>
-  <h2>元気</h2>
+  <h2>カバー<%= link_to "変更", edit_cover_path(@user), {:class => "btn btn-success pull-right"} %></h2>
+  <h2>ギャラリー<%= link_to "変更", user_categories_path(@user), {:class => "btn btn-success pull-right"} %></h2>
+  <h2>仕事情報<%= link_to "変更", user_works_path(@user), {:class => "btn btn-success pull-right"} %></h2>
 </div>
