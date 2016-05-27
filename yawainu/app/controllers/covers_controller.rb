@@ -1,22 +1,12 @@
 class CoversController < ApplicationController
   before_action :require_login
 
-  #def index
-  #end
-  #
-  #def create
-  #end
-  #
-  #def new
-  #end
-
   def edit
     @h1_title = 'カバー設定'
     @cover = Cover.find_by(user_id: params[:id])
-  end
 
-  #def show
-  #end
+    @back_link = "/users/#{params[:id]}/admin"
+  end
 
   def update
     @cover = Cover.find_by(user_id: params[:id])
@@ -28,8 +18,6 @@ class CoversController < ApplicationController
     end
   end
 
-  #def destroy
-  #end
 
   private
     def cover_params

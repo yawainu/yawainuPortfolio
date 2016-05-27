@@ -1,0 +1,9 @@
+<tr>
+  <td><%= gallery.title %></td>
+  <td><% if gallery.flag %>表示<% else %>非表示<% end %></td>
+  <td><%= gallery.comment %></td>
+  <td>
+    <%= link_to "編集", edit_user_category_gallery_path(:user_id => user, :category_id => gallery.category, :id => gallery), {:class => "btn btn-success"} %>
+    <%= link_to '削除', [user, gallery.category, gallery], method: :delete, :class => "btn btn-danger", data: {confirm: "削除しますか？"} %>
+  </td>
+</tr>

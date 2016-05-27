@@ -21,4 +21,6 @@ module ApplicationHelper
     }
   end
 
+  # 戻るボタンリンク生成ヘルパー作りたかった
+
 end

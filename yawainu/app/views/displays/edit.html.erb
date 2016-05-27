@@ -1,4 +1,4 @@
 <%= bootstrap_form_for(@display) do |f| %>
   <%= render 'shared/panel_body', f: f, form: 'displays/form' %>
-  <%= render 'shared/panel_footer', f: f %>
+  <%= render 'shared/panel_footer', f: f, back_link: @back_link %>
 <% end %>

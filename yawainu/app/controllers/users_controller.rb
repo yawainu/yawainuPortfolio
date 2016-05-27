@@ -6,24 +6,28 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-  end
+  #def show
+  #end
 
   def new
     @h1_title = 'ユーザ新規登録'
     @user = User.new
+
+    @back_link = "/user_sessions/new"
   end
 
   def edit
     @h1_title = 'ユーザ情報編集'
     @user = User.find(params[:id])
+
+    @back_link = "/users/#{params[:id]}/admin"
   end
 
   def create
     @user = User.new(user_params)
 
     if @user.save
-      # category,gallery,workは追加できるので作らない
+      # Userと1:1なので空を作っておく
       @user.create_cover()
       @user.create_display()
 

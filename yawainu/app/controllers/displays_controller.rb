@@ -1,22 +1,12 @@
 class DisplaysController < ApplicationController
   before_action :require_login
 
-  #def index
-  #end
-  #
-  #def create
-  #end
-  #
-  #def new
-  #end
-
   def edit
     @h1_title = '表示設定'
     @display = Display.find_by(user_id: params[:id])
-  end
 
-  #def show
-  #end
+    @back_link = "/users/#{params[:id]}/admin"
+  end
 
   def update
     @display = Display.find_by(user_id: params[:id])
@@ -28,8 +18,6 @@ class DisplaysController < ApplicationController
     end
   end
 
-  #def destroy
-  #end
 
   private
     def display_params
