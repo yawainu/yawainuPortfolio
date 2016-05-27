@@ -10,9 +10,13 @@ class WorksController < ApplicationController
   def new
     @h1_title = "仕事履歴追加"
     @user = User.find(params[:user_id])
+    @work = @user.works.build
   end
 
   def edit
+    @h1_title = '仕事履歴編集'
+    @user = User.find(params[:user_id])
+    @work = @user.works.find(params[:id])
   end
 
   def create
@@ -29,6 +33,13 @@ class WorksController < ApplicationController
   #end
 
   def update
+    #@work = @user.works.find(params[:id])
+    #
+    #if @cover.update(cover_params)
+    #  redirect_to user_admin_index_path(params[:id]), notice: '更新しました'
+    #else
+    #  render :edit
+    #end
   end
 
   def destroy
