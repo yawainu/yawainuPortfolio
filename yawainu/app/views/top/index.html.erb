@@ -23,8 +23,10 @@
   </nav>
 </header>
 
-<section class="container-fuild cover">
-</section>
+<!-- cover -->
+<%  if @display.cover %>
+  <%= render 'cover' %>
+<% end %>
 
 <section class="main-wrap">
 
@@ -35,74 +37,30 @@
       </div>
       <div class="col-sm-6">
         <div class="profile__text">
-          ああああああああああああああああああああああああああああああああ
-          ああああああああああああああああああああああああああああああああ
-          ああああああああああああああああああああああああああああああああ
+          <%= @user.comment %>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="no-border">
+  <!-- gallery -->
+  <%  if @display.gallery %>
+    <%= render 'gallery' %>
+  <% end %>
 
-  <section id="gallery" class="container gallery">
-    <h2>GALLERY</h2>
-    <h3>CATEGORY</h3>
-    <div class="row">
-      <% for num in 1..10 do %>
-        <div class="col-xs-6 col-sm-4">
-          <button class="btn gallery__item" data-toggle="modal" data-target=".gallery-modal">
-          </button>
-        </div>
-      <% end %>
-    </div>
-  </section>
-
-  <section class="modal fade gallery-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <img src="<%= asset_path "sample_icon.png" %>" class="img-responsive">
-          <div class="gallery-modal__text">
-            <h4>イラストタイトル</h4>
-            <p>イラストの内容あああああああああああああああああああああああああああああああああああ</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="no-border">
-
-  <section id="works" class="container works">
-    <h2>WORKS</h2>
-
-    <% for num in 1..10 do %>
-      <div class="row">
-        <div class="col-sm-4 col-md-3 works__date">2015/12/12 ~ 2016/12/12</div>
-        <div class="col-sm-8 col-md-9 works__text">iOS,androidアプリ「柔らかい犬祭り」内キャラクターイラスト</div>
-      </div>
-    <% end %>
-  </section>
-
-  <hr class="no-border">
+  <!-- work -->
+  <%  if @display.work %>
+    <%= render 'work' %>
+  <% end %>
 
 </section>
 
 <footer>
-  <section id="contact" class="container contact">
-    <div class="row">
-      <%= bootstrap_form_tag do |f| %>
-        <div class="col-md-6">
-          <%= f.text_field :email %>
-          <%= f.text_field :subject %>
-          <%= f.text_area :body %>
-          <%= f.submit '送信', :class=>"btn btn-primary form-submit-btn pull-right" %>
-        </div>
-      <% end %>
-    </div>
-  </section>
+  <!-- contact -->
+  <%  if @display.contact %>
+    <%= render 'contact' %>
+  <% end %>
+
   <section class="copyright text-center">
     <small>Copyright (C) 2016 yawainu.com All Rights Reserved.</small>
   </section>

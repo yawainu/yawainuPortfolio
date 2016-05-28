@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524114023) do
+ActiveRecord::Schema.define(version: 20160528150001) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "title",      limit: 255, default: "Category", null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160524114023) do
     t.string   "salt",             limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image",            limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

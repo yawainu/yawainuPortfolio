@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :displays
 
   # rooting
-  root 'top#index'
+  root 'user_sessions#new'
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

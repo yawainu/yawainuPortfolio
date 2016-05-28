@@ -6,4 +6,7 @@
   <h2>カバー<%= link_to "変更", edit_cover_path(@user), {:class => "btn btn-success pull-right"} %></h2>
   <h2>ギャラリー<%= link_to "変更", user_categories_path(@user), {:class => "btn btn-success pull-right"} %></h2>
   <h2>仕事情報<%= link_to "変更", user_works_path(@user), {:class => "btn btn-success pull-right"} %></h2>
+
+  <hr>
+  <h2>topページ表示<%= link_to "表示", user_top_index_path(@user), {:class => "btn btn-info pull-right"} %></h2>
 </div>
